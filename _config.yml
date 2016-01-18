@@ -26,32 +26,32 @@ prose:
       - name: "Strava session id"
         field:
           element: "text"
-          label: "ID goes here.."
+          label: "Strava workout ID"
           value: ""
       - name: "Duration"
         field:
           element: "text"
-          label: "hh:mm:ss"
+          label: "Duration - hh:mm:ss"
           value: ""
       - name: "Distance"
         field:
           element: "text"
-          label: "km"
+          label: "Distance - km"
           value: ""
       - name: "Descent"
         field:
           element: "text"
-          label: "m"
+          label: "Descent - m"
           value: ""
       - name: "Ascent"
         field:
           element: "text"
-          label: "m"
+          label: "Ascent - m"
           value: ""
       - name: "Avg speed"
         field:
           element: "text"
-          label: "km/h"
+          label: "Avg speed - km/h"
           value: ""
       - name: "splash"
         field:
@@ -61,8 +61,8 @@ prose:
       - name: "tags"
         field:
           element: "multiselect"
-          label: "Add Tags"
-          placeholder: "Choose Tags"
+          label: "Add Activity Tags"
+          placeholder: "Choose Activity Tags"
           options:
             - name: "Running"
               value: "running"
