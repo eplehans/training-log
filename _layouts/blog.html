@@ -3,26 +3,31 @@ layout: default
 section: blog
 ---
 
-{% if page.splash %}
-  {% if page.splash contains 'http' %}
-    {% capture url %}{{page.splash}}{% endcapture %}
-  {% else %}
-    {% capture url %}{{site.baseurl}}{{page.splash}}/{% endcapture %}
-  {% endif %}
+<article>
+	<h1>{{page.title}}</h1><span class="date">{{page.date | date:"%b %d"}}</span>
+	{% if page.splash %}
+	{% if page.splash contains 'http' %}
+	{% capture url %}{{page.splash}}{% endcapture %}
+	{% else %}
+	{% capture url %}{{site.baseurl}}{{page.splash}}/{% endcapture %}
+	{% endif %}
+	<img src="{{url}}" alt=''/>
+	{% endif %}
+	<div class="prose">
+		{{content}}
+	</div>
 
-  <div class='col12 splash'>
-    <img src='{{url}}' alt='' />
-  </div>
-{% endif %}
+	{% if page.stravaId %}
+	<iframe height='500'
+			width='100%'
+			frameborder='0'
+			allowtransparency='true'
+			scrolling='no'
+			src='https://www.strava.com/activities/{{page.stravaId}}/embed/c5348462ad4b1b044d062bdd3ecff822ba2cb455'>
+	</iframe>
+	{% endif %}
 
-<div class='listing col6 pad4h margin3'>
-  <div class='heading'>
-    <h1>{{page.title}}</h1><span class='date'>{{page.date | date:"%b %d"}}</span>
-  </div>
+</article>
 
-  <div class='prose'>
-    {{content}}
-  </div>
-</div>
 
-{% include rss-link.html %}
+{% include footer.html %}
